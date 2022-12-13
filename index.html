@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Lightbox Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="lightbox.css">
+  </head>
+  <body>
+    <!-- Gallery/Image Code -->
+
+
+    <!-- Lightbox Code -->
+    <div id="lightboxContainer">
+      <div id="lightboxBackground" class="closer"></div>
+      <img id="lightbox" src="" alt="">
+      <img id="coffeeImage" src="images/coffee_L2.jpg" alt="">
+      <span id="lightboxCloser" class="closer">×</span>
+    </div>
+
+    <!-- Lightbox JavaScript -->
+    <script type="text/javascript">
+      let lightboxContainer = document.getElementById('lightboxContainer');
+      let lightboxBackground = document.getElementById('lightboxBackground');
+      let lightbox = document.getElementById('lightbox');
+      let lightboxCloser = document.getElementById('lightboxCloser');
+
+      //function to get the image we want
+      function openLightbox() {
+        lightboxContainer.classList.add('display');
+        lightbox.src = this.src;
+      }
+      
+      let coffeeImage = document.getElementById('coffeeImage');
+      coffeeImage.onclick = openLightbox;
+
+      function closeLightbox(){
+        lightboxContainer.classlist.remove('display');
+        lightbox.src = '';
+      }
+
+      lightboxBackground.onclick = closeLightbox;
+      lightboxCloser.onclick = closeLightbox;
+
+
+
+    </script>
+  </body>
+</html>
